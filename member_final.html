@@ -175,6 +175,51 @@
     line-height: 1.8; /* 텍스트 간격 조정 */
 }
 
+/* ── 카드 높이 통일 ── */
+.member {
+    align-items: flex-start; /* 기존 center → flex-start */
+    min-height: 200px;
+}
+
+/* ── 반응형 브레이크포인트 ── */
+
+/* 태블릿: 2열 */
+@media (max-width: 900px) {
+    .members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .single-member-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Research Professor 세로 배치 */
+    .phdsingle-member-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 모바일: 1열 */
+@media (max-width: 600px) {
+    .members {
+        grid-template-columns: 1fr;
+    }
+    .single-member-container {
+        grid-template-columns: 1fr;
+    }
+    .member {
+        max-width: 100%;
+    }
+    /* Professor 섹션 세로 배치 */
+    .professor-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .professor-image, .professor-info {
+        flex: 1 1 100%;
+    }
+}
+
+		
       </style>
 
 
