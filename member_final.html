@@ -27,7 +27,7 @@
         }
 
       .section-title {
-        text-align: center;
+        text-align: flex-start;
         margin: 20px 0;
         font-size: 24px;
         color: #333;
@@ -125,6 +125,10 @@
     height: 150px; /* 사진 크기 조정 */
     border-radius: 50%; /* 원형 이미지 */
     object-fit: cover; /* 이미지 크기 유지 */
+    object-position: center top; /* 얼굴이 위쪽에 있는 경우 잘림 방지 */
+    flex-shrink: 0;          /* 카드가 좁아져도 사진 축소 방지 */
+    margin-top: 8px;         /* 이름 텍스트와 살짝 맞춤 */
+			
 
 }
 
@@ -177,8 +181,8 @@
 
 /* ── 카드 높이 통일 ── */
 .member {
-    align-items: flex-start; /* 기존 center → flex-start */
-    min-height: 200px;
+    align-items: center; 
+    min-height: 220px;
 }
 
 /* ── 반응형 브레이크포인트 ── */
